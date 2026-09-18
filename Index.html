@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information</title>
+    <style>
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(37, 99, 235, 0.15), transparent 30%),
+        radial-gradient(circle at 90% 30%, rgba(16, 185, 129, 0.12), transparent 30%),
+        radial-gradient(circle at 50% 100%, rgba(59, 130, 246, 0.10), transparent 35%),
+        #f8fbff;
+    color: #1e3a8a;
+    min-height: 100vh;
+}
+    nav {
+    background: #123b70;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: bold;
+}
+    nav a:hover {
+        color: #facc15;
+    }
+    .nav-links a:first-child {
+    background-color: #1683ff;
+    padding: 10px 22px;
+    border-radius: 10px;
+}
+
+    h1 {
+        color: #1e3a8a;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    h2 {
+        color: #1e3a8a;
+        margin-top: 35px;
+    }
+
+    p {
+        line-height: 1.6;
+    }
+
+    img {
+        display: block;
+        width: 300px;
+        max-width: 100%;
+        margin: 25px auto;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    table {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto;
+        border-collapse: collapse;
+        background-color: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    th {
+        background-color: #1e3a8a;
+        color: white;
+        padding: 15px;
+    }
+
+    td {
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .table-card tr:hover {
+    background-color: #f8fbff;
+    transition: 0.2s;
+}
+
+.table-card td {
+    transition: 0.2s;
+}
+
+.table-card tr:hover td {
+    padding-left: 18px;
+}
+
+.table-card td {
+    transition: 0.2s;
+}
+
+.table-card tr:hover td {
+    padding-left: 18px;
+}
+
+    section {
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
+    }
+    .hero {
+    max-width: 1200px;
+    min-height: 430px;
+    margin: 0 auto;
+    padding: 60px 8%;
+    background: linear-gradient(135deg, #062b52, #1261a0);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    overflow: hidden;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero h1 {
+    text-align: left;
+    font-size: 52px;
+    margin-top: 0;
+    color: white;
+    line-height: 1.1;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #dbeafe;
+    max-width: 550px;
+}
+
+.hero img {
+    width: 330px;
+    height: 330px;
+    object-fit: cover;
+    margin: 0;
+    border: 6px solid white;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+.grade {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background-color: #dcfce7;
+    color: #166534;
+    font-weight: bold;
+}
+.info-section,
+.contact-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.contact-info {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f4f7fb;
+    border-radius: 10px;
+}
+@media (max-width: 600px) {
+    .stats {
+    grid-template-columns: 1fr;
+}
+
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    nav {
+        width: 100%;
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+        font-size: 13px;
+    }
+
+    .hero {
+        width: 100%;
+        min-height: auto;
+        padding: 45px 25px;
+        flex-direction: column;
+        text-align: center;
+        gap: 35px;
+    }
+
+    .hero-text {
+        width: 100%;
+    }
+
+    .hero h1 {
+        text-align: center;
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero-button {
+        font-size: 15px;
+    }
+
+    .hero img {
+        width: 260px;
+        height: 260px;
+        margin: 0 auto;
+    }
+
+    .students {
+        width: 100%;
+        margin: 50px auto;
+        padding: 20px 15px;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+
+    .section-heading p {
+        font-size: 15px;
+    }
+
+    .table-card {
+        width: 100%;
+        padding: 15px;
+        overflow-x: auto;
+    }
+
+    .table-card table {
+        width: 100%;
+    }
+
+    th,
+    td {
+        padding: 12px 8px;
+        font-size: 13px;
+    }
+
+    .info-container {
+        width: 100%;
+        grid-template-columns: 1fr;
+        padding: 15px;
+        gap: 25px;
+        margin: 40px auto;
+    }
+
+    .info-container .info-section,
+    .info-container .contact-section {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .info-container h2 {
+        font-size: 28px;
+    }
+
+    .info-container p {
+        font-size: 15px;
+    }
+
+    footer {
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+}
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+.hero-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 25px;
+    background-color: #1683ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-3px);
+}
+.shape {
+    position: fixed;
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(2px);
+    opacity: 0.5;
+}
+
+.shape-one {
+    width: 280px;
+    height: 280px;
+    background: #bfdbfe;
+    top: 120px;
+    left: -120px;
+    animation: floatOne 6s ease-in-out infinite;
+}
+
+.shape-two {
+    width: 320px;
+    height: 320px;
+    background: #bbf7d0;
+    bottom: -120px;
+    right: -120px;
+    animation: floatTwo 7s ease-in-out infinite;
+}
+
+@keyframes floatOne {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(25px);
+    }
+}
+
+@keyframes floatTwo {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-25px);
+    }
+}
+
+.shape-one {
+    width: 250px;
+    height: 250px;
+    background: #bfdbfe;
+    top: 150px;
+    left: -100px;
+}
+
+.shape-two {
+    width: 300px;
+    height: 300px;
+    background: #bbf7d0;
+    bottom: -100px;
+    right: -100px;
+}
+.students {
+    max-width: 1000px;
+    margin: 70px auto;
+    padding: 20px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-heading span {
+    font-size: 13px;
+    font-weight: bold;
+    color: #1683ff;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    font-size: 36px;
+    margin: 10px 0;
+}
+
+.section-heading p {
+    color: #64748b;
+}
+
+.table-card {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.table-card table {
+    margin: 0;
+    max-width: none;
+    box-shadow: none;
+}
+
+.table-card tr:last-child td {
+    border-bottom: none;
+}
+.info-container {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.info-container .info-section,
+.info-container .contact-section {
+    margin: 0;
+    max-width: none;
+    min-height: 250px;
+}
+
+.info-container h2 {
+    margin-top: 0;
+    font-size: 28px;
+}
+
+.contact-info {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: #f0fdf4;
+    border-radius: 12px;
+}
+
+.contact-info p {
+    margin: 10px 0;
+}
+footer {
+    margin-top: 30px;
+    padding: 35px 8%;
+   background: linear-gradient(135deg, #123b70, #062b52);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+footer p {
+    margin: 0;
+    color: #dbeafe;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #93c5fd;
+}
+@media (max-width: 600px) {
+
+    .info-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+@media (max-width: 600px) {
+
+    .info-container {
+        width: 100%;
+        padding: 15px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .info-container .info-section,
+    .info-container .contact-section {
+        width: 100%;
+        min-height: auto;
+        padding: 25px;
+    }
+
+}
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.stat-card span {
+    font-size: 30px;
+}
+
+.stat-card h3 {
+    font-size: 32px;
+    margin: 10px 0 5px;
+    color: #1e3a8a;
+}
+
+.stat-card p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+}
+@media (max-width: 600px) {
+
+    nav {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    nav a {
+        margin-left: 0;
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+}
+html {
+    scroll-behavior: smooth;
+}
+@media (max-width: 700px) {
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 45px 20px;
+    }
+
+    .hero h1 {
+        text-align: center;
+        font-size: 38px;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero img {
+        width: 280px;
+        height: 280px;
+    }
+
+    .hero-button {
+        margin-top: 15px;
+    }
+
+}
+@media (max-width: 600px) {
+
+    .table-card {
+        overflow-x: auto;
+    }
+
+    .table-card table {
+        min-width: 600px;
+    }
+
+}
+@media (max-width: 600px) {
+
+    .nav-links {
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        display: inline-block;
+    }
+
+}
+</style>
+</head>
+
+<body>
+    <div class="shape shape-one"></div>
+<div class="shape shape-two"></div>
+    <nav>
+
+    <div class="logo">
+        🎓 Student Portal
+    </div>
+
+   <div class="nav-links" id="navLinks"></div>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact Us</a>
+    </div>
+
+</nav>
+
+<section id="home" class="hero">
+
+    <div class="hero-text">
+        <h1>Welcome to My Student Page</h1>
+
+        <p>
+            Discover student information, academic grades,
+            and useful details all in one place.
+        </p>
+        <a href="#students" class="hero-button">
+    Explore Students →
+</a>
+                     
+    </div>
+
+    <img src="./student.jpg" alt="Student Image">
+
+</section>
+<section id="students" class="students">
+
+    <div class="section-heading">
+        <span>ACADEMIC RECORDS</span>
+        <h2>Student Information</h2>
+        <p>View student classes and academic grades.</p>
+        <div class="stats">
+
+    <div class="stat-card">
+        <span>👨‍🎓</span>
+        <h3>3</h3>
+        <p>Total Students</p>
+    </div>
+
+    <div class="stat-card">
+        <span>🏆</span>
+        <h3>2</h3>
+        <p>A Grades</p>
+    </div>
+
+    <div class="stat-card">
+        <span>📚</span>
+        <h3>3</h3>
+        <p>Classes</p>
+    </div>
+
+</div>
+    </div>
+
+    <div class="table-card">
+
+        <table>
+            <tr>
+                <th>Student Name</th>
+                <th>Student Class</th>
+                <th>Student Grade</th>
+            </tr>
+
+            <tr>
+                <td>John</td>
+                <td>SS2</td>
+                <td><span class="grade">A</span></td>
+            </tr>
+
+            <tr>
+                <td>Mary</td>
+                <td>SS1</td>
+                <td><span class="grade">B</span></td>
+            </tr>
+
+            <tr>
+                <td>David</td>
+                <td>SS3</td>
+                <td><span class="grade">A</span></td>
+            </tr>
+        </table>
+
+    </div>
+
+</section>
+
+
+<div class="info-container">
+
+    <section id="about" class="info-section">
+
+        <h2>About This Website</h2>
+
+        <p>
+            This website provides a simple and organized way
+            to view student information and academic grades.
+            It was created to make student details easier to access.
+        </p>
+
+    </section>
+
+
+    <section id="contact" class="contact-section">
+
+        <h2>Contact Us</h2>
+
+        <p>
+            Have any questions? Feel free to contact us.
+        </p>
+
+        <div class="contact-info">
+            <p>📧 Email: smartanth576@gmail.com</p>
+            <p>📞 Phone: 09124828227</p>
+        </div>
+
+    </section>
+
+</div>
+
+<footer>
+
+    <div class="footer-logo">
+        🎓 Student Portal
+    </div>
+
+    <p>
+        © 2026 Student Portal. All rights reserved.
+    </p>
+
+    <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+</footer>
+
+<script>
+    document.querySelector(".hero-button").addEventListener("click", function() {
+        alert("Welcome to the Student Information section!");
+    });
+</script>
+
+</body>
+</html>
+
